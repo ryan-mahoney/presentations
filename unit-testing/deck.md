@@ -109,9 +109,13 @@ class RegistrationTest extends PHPUnit_Framework_TestCase {
 
 ![alt text](http://cdn-ak.f.st-hatena.com/images/fotolife/K/Kenji_s/20120117/20120117095833.png "Running Tests")
 
+---
+
 ### Code Coverage
 
 ![alt text](https://camo.githubusercontent.com/9408c3510fd2ced7720fb6beaca86731472681c0/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f313237373532362f323233383832372f65323337346132362d396330332d313165332d383066342d3135656234383765643361652e706e67 "Code Coverage")
+
+---
 
 ### TDD
 
