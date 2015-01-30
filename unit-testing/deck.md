@@ -43,9 +43,8 @@ Is your codes testable?
 1. A test runner (PHPUnit)
 2. Some configuration (XML..)
 3. A bootstrap (where is my framework?)
-4. A folder for test suites (a folder of tests)
-5. A test suite (a class)
-6. Unit Test (methods)
+4. A test suite (a class)
+5. Unit Test (methods)
 
 ---
 
@@ -61,3 +60,59 @@ Is your codes testable?
     </testsuites>
 </phpunit>
 ```
+
+### Bootstrap
+
+```php
+<?php
+date_default_timezone_set('UTC');
+require_once __DIR__.'/../vendor/autoload.php';
+```
+
+### Test Suite
+
+```php
+<?php
+use PHPUnit_Framework_TestCase;
+use Guzzle\Http\Client;
+
+class RegistrationTest extends PHPUnit_Framework_TestCase {
+    public function testCreateAccountSuccess () {
+        $request = self::$client->post(self::$host . '/register?from', array(), array());
+        $request->setHeader('Accept', 'application/json');
+        $request->setHeader('X-Requested-With', 'XMLHttpRequest');
+
+        $email = 'ryan.mahoney+' . uniqid() . '@betterlesson.com';
+
+        $request->addPostFields(array(
+            'User' => array(
+                'Grade'               => array('id' => 12),
+                'Subject'             => array('id' => 1),
+                'email'               => $email,
+                'first_name'          => 'Ryan',
+                'is_landing_template' => 'true',
+                'last_name'           => 'Mahoney',
+                'password'            => 'password',
+                'registration_action' => '',
+                'registration_url'    => ''
+            )
+        ));
+
+        $response = $request->send();
+        $data = json_decode($response->getBody(), true);
+        $this->assertTrue($data['auth_user_email'] == $email);
+    }
+}
+```
+
+### Running Tests
+
+![alt text](http://cdn-ak.f.st-hatena.com/images/fotolife/K/Kenji_s/20120117/20120117095833.png "Running Tests")
+
+### Code Coverage
+
+![alt text](https://camo.githubusercontent.com/9408c3510fd2ced7720fb6beaca86731472681c0/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f313237373532362f323233383832372f65323337346132362d396330332d313165332d383066342d3135656234383765643361652e706e67 "Code Coverage")
+
+### TDD
+
+Pactical TDD
