@@ -61,6 +61,8 @@ Is your codes testable?
 </phpunit>
 ```
 
+---
+
 ### Bootstrap
 
 ```php
@@ -68,6 +70,8 @@ Is your codes testable?
 date_default_timezone_set('UTC');
 require_once __DIR__.'/../vendor/autoload.php';
 ```
+
+---
 
 ### Test Suite
 
