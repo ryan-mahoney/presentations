@@ -258,7 +258,7 @@ class Tiger extends Lion {}
 class Liger extends Tiger {}
 ```
 
-----
+---
 
 ## Extends in Detail
 
