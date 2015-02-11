@@ -35,8 +35,7 @@ A class is the blueprint from which individual objects are created.
 
 ```php
 <?php
-class FormInputField {
-}
+class SomeThing {}
 ```
 ---
 
@@ -47,13 +46,14 @@ Classes only consist of two types of things...
 class NicePerson {
     private $greeting = 'Hi';
     
-    public function sayHi () {
+    public function sayGreeting () {
         echo $this->greeting;
     }
 }
 
 $ryan = new NicePerson();
-$ryan->sayHi();
+$ryan->sayGreeting();
+
 //Hi!
 ```
 
@@ -63,13 +63,19 @@ $ryan->sayHi();
 
 An object is an instance of a class.
 
-(Tell the interview story... from BSD...)
+(Tell the interview story from BSD...)
 
 ---
 
 ## Object Oriented Thinking
 
-Consider that a house is an instance of a blueprint. Many houses can be made using the same blueprint. A blueprint is useful, but you can't live in one.  An object takes up space and can possibly store and do things.
+Consider that a house is an instance of a blueprint.
+
+Many houses can be made using the same one blueprint. 
+
+A blueprint is useful description of a house, but you can't live in one.
+
+An object takes up space (memory) and can possibly store (data) and do things (be executed).
 
 ---
 
@@ -95,7 +101,7 @@ There are only two hard things in Computer Science: cache invalidation and namin
 ```
 -- Phil Karlton
 
-Writing new software is easy and fun... maintaining old software is hard.  
+Writing new software is easy and fun... maintaining existing software is hard.  
 
 How you name things will make your or someone else's job easier or harder over time.
 
