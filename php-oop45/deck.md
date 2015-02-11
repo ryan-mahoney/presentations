@@ -134,7 +134,7 @@ There are only two hard things in Computer Science: cache invalidation and namin
 
 Writing new software is easy and fun... maintaining existing software is hard.  
 
-How you name things will make your or someone else's job easier or harder over time.
+How you name fields and methods will make your or someone else's job easier or harder over time.
 
 ---
 
