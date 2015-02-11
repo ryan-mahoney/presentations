@@ -5,6 +5,8 @@ Ryan Mahoney
 
 Senior Software Engineer @ BetterLesson.com
 
+(BetterLesson is hiring!)
+
 15 years of software development, database adminstration and software architecture exerperience.
 
 ---
@@ -14,10 +16,12 @@ Senior Software Engineer @ BetterLesson.com
 - popular / universal
 - good for building systems
 - proven strategy of modularization
-- benefits of encapsulation
-- mature tools for automated testing / analysis
+- reap the benefits of encapsulation
+- mature tooling for automated testing / analysis
 - makes libraries and services more "composable"
+  - php composer 
 - it documents its own architecture (sort of)
+  - looking at class names, etc give impression of architecture  
 - the basis for most software architecture design patterns
 
 ---
@@ -91,6 +95,35 @@ class FormInputField {
     private $tag;
     private $value;
 }
+```
+---
+
+---
+
+## Fields: Setting Values
+
+- default
+- via constuctor
+- "reaching into" public fields
+- from a method
+
+```php
+<?php
+class FormInputField {
+    public $type = 'input';
+    private $value;
+    
+    public function __construct ($type) {
+        $this->type = $type;
+    }
+    
+    public function setValue ($value) {
+        $this->value = $value;
+    }
+}
+
+$input = new FormInputField('submit');
+$input->type = 'text';
 ```
 ---
 
@@ -210,6 +243,66 @@ class FormInputField {
 - access control (visibility)
 ---
 ## Inheriting Classes
+
+- define a base of functionality that can be used by "child" classes
+- create new "composite" classes
+- controvercial, re: "coupling", see James Gosling
+- the purpose of patterns is to avoid coupling and make systems resistant to defects
+
+The "extends" keyrowd
+
+```php
+<?php
+class Lion {}
+class Tiger extends Lion {}
+class Liger extends Tiger {}
+```
+
+----
+
+## Extends in Detail
+
+```php
+<?php
+class Lion {
+    protected $hasMane = true;
+    
+    public function speak () {
+        return 'Rooooaaaar!!!';
+    }
+}
+
+class Tiger extends Lion {
+    protected $hasStripes = true;
+}
+
+class Liger extends Tiger {
+    protected $isMythical = true;
+    
+    public function speak () {
+        return 'Vote for Pedro';
+    }
+    
+    public function aboutMe () {
+        var_dump($this->hasMane);
+        var_dump($this->hasStripes);
+        var_dump($this->isMythical);
+    }
+}
+
+$gus = new Liger();
+$gus->aboutMe();
+echo $gus->speak();
+```
+
+bool(true)
+
+bool(true)
+
+bool(true)
+
+Vote for Pedro
+
 ---
 ## Inheriting Constructors and Destructors
 ---
