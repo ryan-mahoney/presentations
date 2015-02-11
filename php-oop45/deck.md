@@ -7,7 +7,7 @@ Senior Software Engineer @ BetterLesson.com
 
 (BetterLesson is hiring!)
 
-15 years of software development, database adminstration and software architecture exerperience.
+15 years of software development, database administration and software architecture exerperience.
 
 ---
 
@@ -103,7 +103,7 @@ class FormInputField {
 ## Fields: Setting Values
 
 - default
-- via constuctor
+- via constructor
 - "reaching into" public fields
 - from a method
 
@@ -246,10 +246,10 @@ class FormInputField {
 
 - define a base of functionality that can be used by "child" classes
 - create new "composite" classes
-- controvercial, re: "coupling", see James Gosling
+- controversial, re: "coupling", see James Gosling
 - the purpose of patterns is to avoid coupling and make systems resistant to defects
 
-The "extends" keyrowd
+The "extends" keyword
 
 ```php
 <?php
@@ -328,7 +328,7 @@ $model = new CustomersModel($db, $table);
 
 ## Overriding Methods
 
-- when I child class redefines a method, the parents method is overridden in child objets
+- when I child class redefines a method, the parents method is overridden in child objects
 
 ---
 ## Access Control (visibility)
@@ -404,3 +404,11 @@ $objectB->showVariable();
 Check us out at BetterLesson.com
 
 (Did I mention we are hiring?)
+
+**Thank You**
+
+ryan.mahoney@betterlesson.com
+
+vcryan on twitter
+
+http://www.github.com/ryan-mahoney
