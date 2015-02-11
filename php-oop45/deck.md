@@ -293,30 +293,45 @@ class Liger extends Tiger {
 $gus = new Liger();
 $gus->aboutMe();
 echo $gus->speak();
+//bool(true)
+//bool(true)
+//bool(true)
+//Vote for Pedro
 ```
-
-bool(true)
-
-bool(true)
-
-bool(true)
-
-Vote for Pedro
 
 ---
 ## Inheriting Constructors and Destructors
+
+```php
+<?php
+class BaseModel {
+    protected $db;
+    
+    public function __construct ($db) {
+        $this->db = $db;
+    }
+}
+
+class CustomersModel {
+    private $table;
+    
+    public function __construct ($db, $table) {
+        $this->table = $table;
+        parent::__construct($db);
+    }
+}
+
+$model = new CustomersModel($db, $table);
+```
+
 ---
+
 ## Overriding Methods
+
+- when I child class redefines a method, the parents method is overridden in child objets
+
 ---
 ## Access Control (visibility)
-
-- public, private, protected
-- and API (Application Programmer Interface) is the public methods
-- it's about clarifying the intent in terms of who can see / use a method
-
----
-
-## Access Control Intent
 
 **Public**
 Can be called from outside the class
@@ -328,8 +343,64 @@ Can only be called internally within the object by its own methods, can not be c
 Can only be called internally within the object by its own methods, but can be called by child-classes
 
 ---
+
+## Access Control Intent
+
+**What is an API?**
+
+How your code will be utilized externally.
+
+Managing "mutations".
+
+It's about clarifying the intent in terms of who can see / use a method.
+
+Collectively, your public methods are your project's API.
+
+Private methods: don't even try to override me.
+
+Protected: you may want to extend this class and override some of these.
+
+---
 ## Using the Scope Resolution Operator
+
+The "::" operator, also known in Hebrew as "Paamayim Nekudotayim" (two dots... twice?)
+
+A static variable is a variable that is shared across all instances of a class.
+
+A static method is a method that can be called on a class and usually does not require the class to be instantiated.
+
 ---
-## Creating Static Members
+
+## Using the Scope Resolution Operator
+
+```php
+<?php
+class SomeClass {
+    private static $someVarable = 0;
+    
+    public static function setVariable($value) {
+        self::$someVariable = $value;
+    }
+    
+    public function showVariable() {
+        return self::$someVariable;
+    }
+}
+
+SomeClass::setVariable = 2;
+
+$objectA = new SomeClass();
+$objectA->showVariable();
+
+$objectB = new SomeClass();
+$objectB->showVariable();
+
+//2
+//2
+```
 ---
-# Fin
+# The End
+
+Check us out at BetterLesson.com
+
+(Did I mention we are hiring?)
