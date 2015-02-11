@@ -287,10 +287,17 @@ class Liger extends Tiger {
         var_dump($this->isMythical);
     }
 }
+```
 
+---
+## Everything Your Need to Know About Ligers
+
+```php
+<?php
 $gus = new Liger();
 $gus->aboutMe();
 echo $gus->speak();
+
 //bool(true)
 //bool(true)
 //bool(true)
