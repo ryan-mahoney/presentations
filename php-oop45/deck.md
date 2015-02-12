@@ -239,6 +239,8 @@ class FormInputField {
 - inheritance
 - overriding methods
 - access control (visibility)
+- scope resolution
+
 ---
 ## Inheriting Classes
 
@@ -305,6 +307,12 @@ echo $gus->speak();
 ```
 
 ---
+
+## Overriding Methods
+
+- when I child class redefines a method, the parents method is overridden in child objects
+
+---
 ## Inheriting Constructors and Destructors
 
 ```php
@@ -331,11 +339,6 @@ $model = new CustomersModel($db, $table);
 
 ---
 
-## Overriding Methods
-
-- when I child class redefines a method, the parents method is overridden in child objects
-
----
 ## Access Control (visibility)
 
 **Public**
@@ -360,6 +363,8 @@ Managing "mutations".
 It's about clarifying the intent in terms of who can see / use a method.
 
 Collectively, your public methods are your project's API.
+
+Public methods: I'm your API!
 
 Private methods: don't even try to override me.
 
@@ -406,11 +411,13 @@ $objectB->showVariable();
 ---
 # The End
 
+Questions?
+
+**Thank You**
+
 Check us out at BetterLesson.com
 
 (Did I mention we are hiring?)
-
-**Thank You**
 
 ryan.mahoney@betterlesson.com
 
