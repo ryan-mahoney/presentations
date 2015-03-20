@@ -109,6 +109,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 end
 ```
 
+---
+
 ## In Action: provision.sh
 
 ```bash
@@ -133,6 +135,8 @@ zcat /var/www/dbdump/dump_for_dev_vm.sql.gz | mysql -u root -proot betterlesson_
 
 exit 0
 ```
+
+---
 
 ## Usage
 
