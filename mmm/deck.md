@@ -13,7 +13,6 @@
 - he worked at IBM in 60's (back when IBM mattered...)
 - system architect, computer scientist and software engineer
 - designed operating systems when every new computer had a new operating system
-- he is an Evangelical Christian (fun fact withing a fun fact...)
 
 ---
 
